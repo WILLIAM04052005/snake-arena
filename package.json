@@ -1,0 +1,23 @@
+{
+  "name": "snake-arena",
+  "private": true,
+  "description": "Snake multijoueur en temps réel — monorepo TypeScript (React + Fastify + Socket.io)",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,web -c cyan,magenta \"npm run dev -w @snake-arena/server\" \"npm run dev -w @snake-arena/web\"",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}
