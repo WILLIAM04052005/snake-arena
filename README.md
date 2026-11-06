@@ -33,12 +33,12 @@ snake-arena/
 
  Client (React)                      Serveur (Node)
  ──────────────                      ──────────────
- touche ↓  ── emit('input', 'down') ──▶ validation + rate limit
+ touche ↓  ── emit('input', 'down') ── validation + rate limit
                                         │
-                                        ▼
+                                        ↓
                                      step(state)   ← toutes les 100 ms
                                         │
- rendu Canvas ◀── emit('state', …) ─────┘  (diffusé à tout le salon)
+ rendu Canvas <── emit('state', …) ─────┘  (diffusé à tout le salon)
 
 ### Choix techniques
 
