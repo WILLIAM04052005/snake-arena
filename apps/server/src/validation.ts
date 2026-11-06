@@ -1,10 +1,4 @@
 import { DIRECTIONS, type Direction } from '@snake-arena/shared';
-
-/**
- * Le serveur ne fait jamais confiance au client : tout ce qui arrive
- * par le réseau est validé avant d'être utilisé.
- */
-
 export const ROOM_CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ'; // sans I ni O (confusion avec 1 et 0)
 export const ROOM_CODE_LENGTH = 4;
 export const NAME_MAX_LENGTH = 16;
@@ -27,10 +21,6 @@ export function parseDirection(value: unknown): Direction | null {
   return DIRECTIONS.includes(value as Direction) ? (value as Direction) : null;
 }
 
-/**
- * Limiteur simple à fenêtre fixe : au-delà de `max` messages par `windowMs`,
- * les messages sont ignorés. Évite qu'un client inonde le serveur.
- */
 export function createRateLimiter(max: number, windowMs: number, now: () => number = Date.now) {
   let windowStart = now();
   let count = 0;

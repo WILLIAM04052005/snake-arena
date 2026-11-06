@@ -14,10 +14,6 @@ import { ROOM_CODE_ALPHABET, ROOM_CODE_LENGTH } from './validation';
 
 export const MAX_PLAYERS_PER_ROOM = 8;
 
-/**
- * Un salon = une partie. Le serveur fait autorité : il est le seul à faire
- * avancer l'état du jeu, les clients ne font qu'envoyer des intentions.
- */
 export class GameRoom {
   state: GameState;
   private timer: ReturnType<typeof setInterval> | null = null;
