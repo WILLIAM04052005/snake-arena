@@ -17,7 +17,6 @@ function saveName(name: string) {
   try {
     localStorage.setItem(NAME_KEY, name);
   } catch {
-    /* stockage indisponible : pas grave */
   }
 }
 

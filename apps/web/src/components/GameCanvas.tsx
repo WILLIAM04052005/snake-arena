@@ -8,7 +8,6 @@ interface Props {
   playerId: string;
 }
 
-/** Rendu Canvas : redessine toute la grille à chaque nouvel état reçu */
 export function GameCanvas({ state, playerId }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { width, height } = state.config;
@@ -18,7 +17,6 @@ export function GameCanvas({ state, playerId }: Props) {
     const ctx = canvas?.getContext('2d');
     if (!canvas || !ctx) return;
 
-    // Net sur les écrans haute densité
     const dpr = window.devicePixelRatio || 1;
     canvas.width = width * CELL * dpr;
     canvas.height = height * CELL * dpr;
@@ -27,7 +25,6 @@ export function GameCanvas({ state, playerId }: Props) {
     ctx.fillStyle = '#0b0f14';
     ctx.fillRect(0, 0, width * CELL, height * CELL);
 
-    // Grille en pointillés discrets
     ctx.fillStyle = '#1a222c';
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
