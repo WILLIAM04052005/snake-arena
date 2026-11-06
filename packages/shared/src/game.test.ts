@@ -11,7 +11,6 @@ import {
 } from './game';
 import type { GameState, Point, Snake } from './types';
 
-/** Générateur pseudo-aléatoire avec graine : tests reproductibles */
 function seeded(seed: number) {
   return () => {
     seed = (seed + 0x6d2b79f5) | 0;

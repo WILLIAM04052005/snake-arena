@@ -1,11 +1,4 @@
 import type { Direction, GameConfig, GameState, Point, Rng, Snake } from './types';
-
-/**
- * Logique pure du jeu : aucune dépendance au réseau ni au rendu.
- * Chaque fonction prend un état et renvoie un nouvel état (pas de mutation),
- * ce qui la rend simple à tester et réutilisable côté serveur comme côté client.
- */
-
 export const DEFAULT_CONFIG: GameConfig = { width: 40, height: 28, foodCount: 6 };
 export const INITIAL_LENGTH = 3;
 export const TICK_MS = 100;
@@ -73,10 +66,6 @@ export function createGame(config: GameConfig = DEFAULT_CONFIG, rng: Rng = Math.
   return fillFood({ config, tick: 0, snakes: {}, food: [] }, rng);
 }
 
-/**
- * Cherche une position où le serpent tient à l'horizontale, orienté vers la droite,
- * avec deux cases libres devant lui pour ne pas mourir instantanément.
- */
 function findSpawn(state: GameState, rng: Rng): Point[] | null {
   const taken = occupiedCells(state);
   const { width, height } = state.config;

@@ -1,10 +1,10 @@
-# 🐍Snake Arena
+# Snake Arena
 
 Snake multijoueur en temps réel dans le navigateur. Crée un salon, partage le code (ou le lien) et affronte jusqu'à 8 joueurs.
 
 ![CI](https://github.com/william/snake-arena/actions/workflows/ci.yml/badge.svg)
 
-> 🎮 **[Jouer maintenant](#)** — _ Pas encore deployer, suis les etapes en dessous pour lancer la demo avec npm install et npm run dev _
+> **[Jouer maintenant](#)** — Pas encore deployer, suis les etapes en dessous pour lancer la demo avec npm install et npm run dev _
 
 ![alt text](game.png)
 
